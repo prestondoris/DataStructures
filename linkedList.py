@@ -9,6 +9,10 @@ class LinkedList(object):
     def __init__(self, head):
         self.head = head
         self.tail = head
+        self.length = 1
+
+    def len(self):
+        return self.length()
 
 
     def append(self, newNode):
@@ -17,6 +21,7 @@ class LinkedList(object):
         if self.head:
             tail.next = newNode
             self.tail = newNode
+            self.length += 1
         else:
             self.head = newNode
             self.tail = newNode
@@ -38,6 +43,22 @@ class LinkedList(object):
                 previous = current
                 current = current.next
 
+
+    def get_value(self, node_position):
+        counter = 1
+        if node_position < 1:
+            return None
+        if self.head:
+            thisNode = self.head
+            while (thisNode.next != None):
+                if node_position == counter:
+                    return thisNode.value
+                else:
+                    thisNode = thisNode.next
+                counter += 1
+        else:
+            return None
+            
 
     #def insert(self, newNode, position):
     #    current = self.head
