@@ -59,6 +59,10 @@ class Solution(object):
             nextRow = []
         return root
 
+
+
+# The code below this was written by LeetCode to make the program run. 
+
 def stringToTreeNode(input):
     input = input.strip()
     input = input[1:-1]

@@ -32,7 +32,11 @@ class Solution(object):
             return 0
         val = max(self.maxDepth(root.left), self.maxDepth(root.right)) + 1
         return val
-        
+
+
+
+
+# The code below this was supplied by LeetCode to run the program
 
 def stringToTreeNode(input):
     input = input.strip()
