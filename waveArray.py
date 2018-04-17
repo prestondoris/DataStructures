@@ -19,9 +19,7 @@ def wave(A):
         return A
     else:
         while i + 1 < n:
-            temp = A[i]
-            A[i] = A[i+1]
-            A[i+1] = temp
+            A[i], A[i+1] = A[i+1], A[i]
             i += 2
     return A
 
