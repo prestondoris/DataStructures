@@ -49,9 +49,11 @@ class Trie(object):
 
 
 trie = Trie()
-keys = ['hello', 'world', 'hi', 'there']
+keys = ['Hello', 'world', 'hi', 'there']
 for key in keys:
     trie.insert(key)
+
+keys.append('hello')
 for key in keys:
     if trie.search(key):
         print '%s is in the Trie' %key
