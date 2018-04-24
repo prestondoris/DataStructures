@@ -64,7 +64,7 @@ def quicksort(array):
         return array
     else:
         pivot = array[-1]
-        pivotInd = array.index(pivot)
+        pivotInd = len(ary) - 1
         start = 0
         while start < pivotInd:
             if array[start] > pivot:
@@ -73,6 +73,8 @@ def quicksort(array):
                 array[pivotInd-1] = pivot
                 array[pivotInd] = temp
                 pivotInd -= 1
+            elif array[start] == pivot:
+                array.remove(array[start])
             else:
                 start += 1
     frontHalf = quicksort(array[:pivotInd])
