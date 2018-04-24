@@ -53,17 +53,15 @@ print 'Merge Sort:'
 ary = [2,5,1,10,20,15,8]
 print ary
 print mergeSort(ary)
+print ''
 
 
 def quickSortDuplicates(array):
-
-    # set the last element of the array as the pivot
-
     if array == [] or len(array) == 1:
         return array
     else:
         pivot = array[-1]
-        pivotInd = len(ary) - 1
+        pivotInd = len(array)-1
         start = 0
         while start < pivotInd:
             if array[start] > pivot:
@@ -74,29 +72,23 @@ def quickSortDuplicates(array):
                 pivotInd -= 1
             elif array[start] == pivot:
                 array.remove(array[start])
+                pivotInd -= 1
             else:
                 start += 1
-    frontHalf = quicksort(array[:pivotInd])
-    backHalf = quicksort(array[pivotInd+1:])
+    frontHalf = quickSortDuplicates(array[:pivotInd])
+    backHalf = quickSortDuplicates(array[pivotInd+1:])
     array = frontHalf
     array.append(pivot)
     array += backHalf
     return array
 
-test = [21, 4, 1, 3, 9, 20, 25, 6, 21, 14]
-print quicksort(test)
-
-
 
 def quickSort(array):
-
-    # set the last element of the array as the pivot
-
     if array == [] or len(array) == 1:
         return array
     else:
         pivot = array[-1]
-        pivotInd = len(ary) - 1
+        pivotInd = len(array)-1
         start = 0
         while start < pivotInd:
             if array[start] > pivot:
@@ -107,12 +99,20 @@ def quickSort(array):
                 pivotInd -= 1
             else:
                 start += 1
-    frontHalf = quicksort(array[:pivotInd])
-    backHalf = quicksort(array[pivotInd+1:])
+    frontHalf = quickSort(array[:pivotInd])
+    backHalf = quickSort(array[pivotInd+1:])
     array = frontHalf
     array.append(pivot)
     array += backHalf
     return array
 
-test = [21, 4, 1, 3, 9, 20, 25, 6, 21, 14]
-print quicksort(test)
+
+test = []
+for i in xrange(499,0,-1):
+    test.append(i)
+print 'Quick Sort Duplicates'
+print quickSortDuplicates(test)
+print ''
+print 'Quick Sort'
+print quickSort(test)
+print ''
