@@ -107,12 +107,10 @@ def quickSort(array):
     return array
 
 
-test = []
-for i in xrange(499,0,-1):
-    test.append(i)
-print 'Quick Sort Duplicates'
-print quickSortDuplicates(test)
-print ''
+test = [5,21,20,3,14,9,18,25,14]
 print 'Quick Sort'
 print quickSort(test)
+print ''
+print 'Quick Sort Duplicates'
+print quickSortDuplicates(test)
 print ''
