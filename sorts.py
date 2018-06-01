@@ -110,6 +110,7 @@ def quickSort(array):
 test = [5,21,20,3,14,9,18,25,14]
 print 'Quick Sort'
 print quickSort(test)
+print test
 print ''
 print 'Quick Sort Duplicates'
 print quickSortDuplicates(test)
